@@ -1,12 +1,13 @@
 {
   "name": "self-driving-car-js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write './**/*.{js,json,jsx,ts,tsx,css,scss,md}' --config ./.prettierrc.json"
   },
   "dependencies": {
     "next": "12.2.5",
@@ -17,8 +18,11 @@
     "@types/node": "18.7.13",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "@typescript-eslint/parser": "^5.35.1",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
     "typescript": "4.8.2"
   }
 }
