@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import ManualCar from './ManualCar';
+import ManualCar from '../domain/ManualCar';
 import styles from './PlayCanvas.module.scss';
-import Road from './Road';
+import Road from '../domain/Road';
 
 export interface PlayCanvasProps extends Omit<React.HTMLProps<HTMLCanvasElement>, 'height'> {}
 
