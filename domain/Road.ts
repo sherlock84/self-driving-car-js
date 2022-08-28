@@ -19,7 +19,7 @@ class Road {
     this._left = _x - _width / 2;
     this._right = _x + _width / 2;
 
-    this.laneSeparators = [...range(1, this.laneCount - 1)]
+    this.laneSeparators = range(1, this.laneCount - 1)
       .map((laneIndex) => lerp(this._left, this._right, laneIndex / this.laneCount))
       .map<Line>((x) => [
         { x, y: this.top },

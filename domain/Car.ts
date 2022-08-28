@@ -1,8 +1,11 @@
 import CarControls from './CarControls';
+import CarSensor from './CarSensor';
 
 abstract class Car {
   private _angle = 0;
   private _speed = 0;
+
+  readonly sensor = new CarSensor(this);
 
   constructor(
     protected _x: number,
@@ -50,6 +53,8 @@ abstract class Car {
   }
 
   draw(context: CanvasRenderingContext2D) {
+    this.sensor.draw(context);
+
     context.save();
 
     context.translate(this._x, this._y);
@@ -63,6 +68,11 @@ abstract class Car {
   }
 
   update() {
+    this.move();
+    this.sensor.update();
+  }
+
+  private move() {
     if (this.controls.forward) {
       this._speed += this.acceleration;
     }
